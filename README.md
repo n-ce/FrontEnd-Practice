@@ -3,4 +3,6 @@
 ⚠️ Practice in Progress
 
 #### 🔴 HTML
-1. [Title](Title.HTML)
+- [This page in HTML](Practice.HTML)
+#### 🔵 CSS
+- [This page in HTML with CSS](PracticeCSS.HTML)
