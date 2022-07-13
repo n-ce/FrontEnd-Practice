@@ -7,3 +7,6 @@
 
 #### 🔵 CSS
 - [This page in HTML with CSS](PracticeCSS.HTML)
+
+#### 🔴🔵🟡 Projects
+- [Loading Screen](LoadingScreen.HTML)
