@@ -1,0 +1,47 @@
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  background-color: #E3FDFD;
+}
+
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#display{
+  height: 15%;
+  width: 80%;
+  font-size: 3rem;
+  background-color: #CBF1F5;
+  color : #71C9CE;
+  text-align: right;
+  overflow: scroll;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  height: 60%;
+  width: 80%;
+}
+button{
+  border:none;
+  font-size: 1.5rem;
+  color: #71C9CE;
+  background-color: #A6E3E9;
+}
+button:focus{
+  background-color: #71C9CE;
+  color: #E3FDFD
+}
+button.operation{
+  background-color: #71C9CE;
+  color: #E3FDFD;
+}
+button.operation:focus{
+  background-color: #CBF1F5;
+  color: #71C9CE;
+}
