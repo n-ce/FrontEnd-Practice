@@ -10,3 +10,4 @@
 
 #### 🔴🔵🟡 Projects
 - [Loading Screen](LoadingScreen.HTML)
+- [Calculator](Calculator/index.html)
