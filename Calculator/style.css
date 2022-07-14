@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 html,body{
   margin:0;
   padding:0;
   height:100%;
   background-color: #E3FDFD;
+}
+*{
+  font-family: 'Orbitron',sans-serif;
+  font-weight: 900;
 }
 
 body{
@@ -37,6 +43,7 @@ button:focus{
   background-color: #71C9CE;
   color: #E3FDFD
 }
+
 button.operation{
   background-color: #71C9CE;
   color: #E3FDFD;
