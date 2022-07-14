@@ -5,11 +5,9 @@ const button = document.getElementsByTagName('button');
 let x;
 let ops = null;
 
-let opslockfx = (a, b, c) => {
-  button[a].disabled =
-  button[b].disabled =
-  button[c].disabled =
-    true;
+let opslock = (boolean) => {
+  for(let j = 0;j<4;j++)
+  button[j].disabled = boolean;
 }
 
 
@@ -18,25 +16,25 @@ button[0].addEventListener('click', () => {
   x = display.textContent;
   display.innerText += '+';
   ops = '+';
-  opslockfx(1, 2, 3);
+  opslock(true);
 });
 button[1].addEventListener('click', () => {
   x = display.textContent;
   display.innerText += '-';
   ops = '-';
-  opslockfx(0, 2, 3);
+  opslock(true);
 });
 button[2].addEventListener('click', () => {
   x = display.textContent;
   display.innerText += '×';
   ops = '*';
-  opslockfx(0, 1, 3);
+  opslock(true);
 });
 button[3].addEventListener('click', () => {
   x = display.textContent;
   display.innerText += '÷';
   ops = '/';
-  opslockfx(0, 1, 2);
+  opslock(true);
 });
 button[4].addEventListener('click', () => {
   display.innerText += 1;
@@ -67,9 +65,7 @@ button[7].addEventListener('click', () => {
     }
     ops = null;
   }
-  for (let i = 0; i < 4; i++) {
-    button[i].removeAttribute('disabled');
-  }
+  opslock(false);
 });
 button[8].addEventListener('click', () => {
   display.innerText += 4;

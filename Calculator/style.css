@@ -48,7 +48,7 @@ button.operation{
   background-color: #71C9CE;
   color: #E3FDFD;
 }
-button.operation:focus{
+button.operation:focus,button.operation:disabled{
   background-color: #CBF1F5;
   color: #71C9CE;
 }
