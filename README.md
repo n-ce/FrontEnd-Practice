@@ -11,3 +11,4 @@
 #### 🔴🔵🟡 Projects
 - [Loading Screen](LoadingScreen.HTML)
 - [Calculator](Calculator/)
+- [Snake Game(only GUI Ready)](SnakeGame/)

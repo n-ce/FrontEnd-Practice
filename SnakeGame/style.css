@@ -1,0 +1,82 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #001D3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+000814 - canvas bg
+001D3D - body bg
+003566 - button bg
+FFC300 - button border bg
+FFD60A - canvas border
+*/
+canvas {
+  height: 90vw;
+  width: 90vw;
+  margin-top: 10vh;
+  background-color: #000814;
+  border: 0.2rem solid #FFD60A;
+  border-radius: 1rem;
+}
+
+#controls {
+  margin-top: 5vw;
+}
+
+button{
+  border:none;
+  background-color: #FFD60A;
+  height: 72px;
+  width: 72px;
+  border: 6px solid #FFC300;
+  margin: 6px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+}
+
+button:focus{
+  background-color:#FFC300;
+  border-color: #003566;
+}
+
+@media screen and (orientation:landscape) {
+  body {
+    flex-direction: row;
+  }
+  canvas {
+    height: 90vh;
+    width: 90vh;
+    margin-top: 0;
+    margin-left: 10vw;
+  }
+  #controls {
+    margin: 0 0 0 5vw;
+  }
+}
+
+/* Control icons*/
+#up {
+  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/up.png");
+}
+#left {
+  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/left.png");
+}
+#start {
+  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/rotate.png");
+  border-radius: 25%;
+}
+#right {
+  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/right.png");
+}
+#down {
+  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/down.png");
+}

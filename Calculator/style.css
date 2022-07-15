@@ -1,54 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-html,body{
-  margin:0;
-  padding:0;
-  height:100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: #E3FDFD;
 }
-*{
-  font-family: 'Orbitron',sans-serif;
+
+* {
+  font-family: 'Orbitron', sans-serif;
   font-weight: 900;
 }
 
-body{
-  display:flex;
+body {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#display{
+
+#display {
   height: 15%;
   width: 80%;
   font-size: 3rem;
   background-color: #CBF1F5;
-  color : #71C9CE;
+  color: #71C9CE;
   text-align: right;
   overflow: scroll;
+  overflow-wrap: break-word;
 }
 
-.buttons{
+.buttons {
   display: grid;
   grid-template-columns: auto auto auto auto;
   height: 60%;
   width: 80%;
 }
-button{
-  border:none;
+
+button {
+  border: none;
   font-size: 1.5rem;
   color: #71C9CE;
   background-color: #A6E3E9;
+  transition: all 0.8s;
 }
-button:focus{
+
+button:focus {
   background-color: #71C9CE;
   color: #E3FDFD
 }
 
-button.operation{
+button.operation {
   background-color: #71C9CE;
   color: #E3FDFD;
 }
-button.operation:focus,button.operation:disabled{
+
+button.operation:focus,
+button.operation:disabled {
   background-color: #CBF1F5;
   color: #71C9CE;
+}
+
+/* Animations */
+.buttons,#display{
+  animation: appear 0.7s;
+}
+.operation{
+  animation: fit 1.4s;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(300%) scale(2);
+  }
+}
+@keyframes fit{
+  from{
+    opacity: 0;
+    transform: translateX(300%)
+  }
 }
