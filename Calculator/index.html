@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div id="display"></div>
+  <input id="display" type="text">
   <div class="buttons">
     <button class="operation" onclick="op('+')">+</button>
     <button class="operation" onclick="op('-')">-</button>
@@ -20,11 +20,11 @@
     <button onclick="no(1)">1</button>
     <button onclick="no(2)">2</button>
     <button onclick="no(3)">3</button>
-    <button class="operation">=</button>
+    <button onclick="result()" class="operation">=</button>
     <button onclick="no(4)">4</button>
     <button onclick="no(5)">5</button>
     <button onclick="no(6)">6</button>
-    <button class="operation">C</button>
+    <button onclick="display.value = ops = x = null" class="operation">C</button>
     <button onclick="no(7)">7</button>
     <button onclick="no(8)">8</button>
     <button onclick="no(9)">9</button>

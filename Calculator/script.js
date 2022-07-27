@@ -1,54 +1,48 @@
 const display = document.getElementById('display');
 
-const button = document.getElementsByTagName('button');
-
 let x;
-let ops = null;
-// Operations Luck
+let ops;
+
+// Operations Lock
 let opslock = (boolean) => {
   for (let j = 0; j < 4; j++)
-    button[j].disabled = boolean;
+    document.getElementsByTagName('button')[j].disabled = boolean;
 }
 
 // Number Input
 let no = (number) => {
-  display.innerText += number;
-}
-// Operation Input
-
-let op = (operation) => {
-  x = display.textContent;
-  display.innerText += operation;
-  ops = operation;
-  opslock(true);
-}
-
-button[7].addEventListener('click', () => {
+  display.value += number;
   if (ops == null) {
-    display.innerText = display.innerText;
+    opslock(false);
   }
-  else if (display.innerText != '') {
-    switch (ops) {
-      case '+':
-        display.innerText = parseInt(x) + parseInt(display.textContent.replace(x + '+', ''));
-        break;
-      case '-':
-        display.innerText = parseInt(x) - parseInt(display.textContent.replace(x + '-', ''));
-        break;
-      case '×':
-        display.innerText = parseInt(x) * parseInt(display.textContent.replace(x + '×', ''));
-        break;
-      case '÷':
-        display.innerText = parseInt(x) / parseInt(display.textContent.replace(x + '÷', ''));
+}
 
+// Operation Input
+let op = (operation) => {
+  if (display.value != '') {
+    x = display.value; // storing first number
+    display.value += operation;
+    ops = operation;
+    opslock(true);
+  }
+}
+
+// Result
+let result = () => {
+  if (display.value != '') {
+    if (ops == '+') {
+      display.value = parseInt(x) + parseInt(display.value.replace(x + '+', ''));
+    }
+    else if (ops == '-') {
+      display.value = parseInt(x) - parseInt(display.value.replace(x + '-', ''));
+    }
+    else if (ops == '×') {
+      display.value = parseInt(x) * parseInt(display.value.replace(x + '×', ''));
+    }
+    else if (ops == '÷') {
+      display.value = parseInt(x) / parseInt(display.value.replace(x + '÷', ''));
     }
     ops = null;
+    opslock(false);
   }
-  opslock(false);
-});
-
-button[11].addEventListener('click', () => {
-  display.innerText = null;
-  x = 0;
-  opslock(false);
-});
+}

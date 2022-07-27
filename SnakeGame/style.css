@@ -19,40 +19,37 @@ body {
 FFC300 - button border bg
 FFD60A - canvas border
 */
-canvas {
+#container {
   height: 90vw;
   width: 90vw;
   margin-top: 10vh;
-  background-color: #000814;
-  border: 0.2rem solid #FFD60A;
-  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+canvas{
+  background-color: black;
+  border: 0.1rem solid #FFC300;
+}
 #controls {
   margin-top: 5vw;
 }
 
 button{
-  border:none;
+  border: none;
   background-color: #FFD60A;
-  height: 72px;
-  width: 72px;
-  border: 6px solid #FFC300;
-  margin: 6px;
+  height: 60px;
+  width: 60px;
+  margin: 12px;
   border-radius: 50%;
   background-repeat: no-repeat;
-}
-
-button:focus{
-  background-color:#FFC300;
-  border-color: #003566;
 }
 
 @media screen and (orientation:landscape) {
   body {
     flex-direction: row;
   }
-  canvas {
+  #container {
     height: 90vh;
     width: 90vh;
     margin-top: 0;
@@ -62,7 +59,7 @@ button:focus{
     margin: 0 0 0 5vw;
   }
 }
-
+img{ display: none}
 /* Control icons*/
 #up {
   background-image: url("https://img.icons8.com/ios-glyphs/60/000000/up.png");
@@ -71,6 +68,7 @@ button:focus{
   background-image: url("https://img.icons8.com/ios-glyphs/60/000000/left.png");
 }
 #start {
+  background-color:#FFC300;
   background-image: url("https://img.icons8.com/ios-glyphs/60/000000/rotate.png");
   border-radius: 25%;
 }
