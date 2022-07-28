@@ -7,63 +7,79 @@ const downBtn = document.getElementById('down');
 const leftBtn = document.getElementById('left');
 const rightBtn = document.getElementById('right');
 
-ctx.fillStyle = 'red';
+// snake
+let s = 10; // snake size
+let x = 10; // x co-ordinate
+let a = 15; // x mover
+let y = 10; // y co-ordinate
+let b = 15; // y movwr
 
-let c = 10;
-let d = 10;
-let e = 10;
-let f = 10;
-let direction;
-// navigation
-let nav = (x) => {
-  ctx.clearRect(c, d, e, e);
-  switch (x) {
-    case 'up':
-      d -= f;
-      break;
-    case 'down':
-      d += f;
-      break;
-    case 'left':
-      c -= f;
-      break;
-    case 'right':
-      c += f;
+ctx.fillStyle = 'green';
+
+let j;
+let i;
+
+//horizontal snake
+
+function hs() {
+  j = 0;
+  for (i = 0; i < 3; i++) {
+    ctx.fillRect(x + (i * a), y + (j * b), s, s);
   }
-
-  ctx.fillRect(c, d, e, e);
 }
 
-let restart = () => {
+//vertical snake
+
+function vs() {
+  i = 0;
+  for (j = 0; j < 3; j++) {
+    ctx.fillRect(x + (i * a), y + (j * b), s, s);
+  }
+}
+
+function draw() {
   ctx.clearRect(0, 0, 300, 300);
-  c = 10;
-  d = 10;
-  ctx.fillRect(c, d, e, e);
 }
-restart();
-startBtn.addEventListener('click', () => {
-  restart();
-})
+
+function moveUp() {
+  draw();
+  vs();
+  y -= 10;
+}
+
+function moveLeft() {
+  draw();
+  hs();
+  x -= 10;
+}
+
+function moveRight() {
+  draw();
+  hs();
+  x += 10;
+}
+
+function moveDown() {
+  draw();
+  vs();
+  y += 10
+}
+
+
+
 upBtn.addEventListener('click', () => {
-  nav('up');
-})
-downBtn.addEventListener('click', () => {
-  nav('down');
-})
+
+  setInterval(moveUp, 500);
+});
 leftBtn.addEventListener('click', () => {
-  nav('left');
-})
+
+  setInterval(moveLeft, 500);
+});
 rightBtn.addEventListener('click', () => {
-  nav('right');
-})
 
-const img = document.querySelector('img');
-img.onload = () => {
-  ctx.drawImage(img, 250, 250,20,20);
-}
-/*
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-*/
+  setInterval(moveRight, 500);
+});
+downBtn.addEventListener('click', () => {
 
+  setInterval(moveDown, 500);
+});
