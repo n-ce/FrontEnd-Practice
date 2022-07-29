@@ -13,44 +13,62 @@ let x = rndNo(2, 28) * 10; // x co-ordinate
 let a = 0; // x mover
 let y = rndNo(2, 28) * 10; // y co-ordinate
 let b = 0; // y movwr
-let k = 3; // length of tail
+let k = 0; // length of tail
 let l = 10; // distance between tails
 rndNo(1, 2) == 1 ? a = l : b = l;
 
 let z = rndNo(1, 29) * l;
 let w = rndNo(1, 29) * l;
 let score = 0;
+let tail = [];
+
+let m = 0; // array storing
+
 function draw() {
+  // scoreboard
+  ctx.fillStyle = '#FC0B';
+  ctx.fillRect(220, 0, 80, 20);
+
+  // scoretext
+  ctx.fillStyle = 'black';
+  ctx.font = "900 15px Arial";
+  ctx.fillText("SCORE " + score, 220, 15);
+
+  // snake head
+  ctx.fillStyle = 'green';
+  ctx.fillRect(x + a, y + b, s, s);
+
+  // apple
+  ctx.fillStyle = 'red';
+  ctx.fillRect(z, w, s, s);
+}
+
+
+setInterval(() => {
+  ctx.clearRect(0, 0, 300, 300);
   if (x == z && y == w) {
     z = rndNo(1, 29) * l;
     w = rndNo(1, 29) * l;
-    score+=10;
+    score += 10;
+    k++;
   }
-  ctx.fillStyle='#FC0B';
-  ctx.fillRect(220,0,80,20);
-  ctx.fillStyle='black';
-  ctx.font = "900 15px Arial";
-  ctx.fillText("SCORE "+score, 220, 15);
-  //head
-  ctx.fillStyle = 'green';
-  ctx.fillRect(x + a, y + b, s, s);
-  ctx.fillStyle = 'red';
-  ctx.fillRect(z, w, s, s);
-
-
-  if (x == 0 || x == 300 || y == 0 || y == 300) {
+  if (x == -10 || x == 300 || y == -10 || y == 300) {
     alert('game has ended');
     location.reload();
   }
-}
-setInterval(function() {
-  ctx.clearRect(0, 0, 300, 300);
+  tail.push([x, y]);
+  ctx.fillStyle='green';
+  for(let i = 0;i<k;i++){
+  ctx.fillRect(tail[m-i][0], tail[m-i][1], s, s);
+  }
+  m++;
   draw();
   x += a;
   y += b;
 
-}, 400);
+}, 300);
 
+// direction changer
 let move = (p1, p2, p3) => {
   if (b !== p1) {
     b = p2;
@@ -58,4 +76,4 @@ let move = (p1, p2, p3) => {
   }
 }
 
-// apple
+// wip snake tail -> dynamic movement & growth on eating
