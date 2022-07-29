@@ -15,13 +15,15 @@
   </div>
   <br>
   <div id="controls" align="center">
-    <button id="up"></button>
-    <br>
-    <button id="left"></button>
-    <button id="start"></button>
-    <button id="right"></button>
-    <br>
-    <button id="down"></button>
+    
+    <button class="gg-arrow-up-r"onclick="move(l, -l, 0)"></button>
+    <div id ="flex">
+    <button class="gg-arrow-left-r" onclick="move(0, 0, -l)"></button>
+    <button class="gg-close-r" onclick="location.reload()"></button>
+    <button class="gg-arrow-right-r" onclick="move(0, 0, l)"></button>
+    </div>
+    <button class="gg-arrow-down-r" onclick="move(-l, l, 0)"></button>
+    
   </div>
   <script src="script.js"></script>
 </body>

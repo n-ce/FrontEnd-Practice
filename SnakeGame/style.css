@@ -1,3 +1,13 @@
+@import url('https://css.gg/arrow-up-r.css');
+@import url('https://css.gg/arrow-left-r.css');
+@import url('https://css.gg/arrow-right-r.css');
+@import url('https://css.gg/arrow-down-r.css');
+@import url('https://css.gg/close-r.css');
+
+:root {
+    --ggs: 2.5;
+}
+
 html,
 body {
   margin: 0;
@@ -12,13 +22,7 @@ body {
   align-items: center;
 }
 
-/*
-000814 - canvas bg
-001D3D - body bg
-003566 - button bg
-FFC300 - button border bg
-FFD60A - canvas border
-*/
+
 #container {
   height: 90vw;
   width: 90vw;
@@ -32,17 +36,26 @@ canvas{
   border: 0.1rem solid #FFC300;
 }
 #controls {
-  margin-top: 5vw;
+  
+  width: 200px;
+  height: 200px;
 }
 
 button{
+  background: #FFC300;
   border: none;
-  background-color: #FFD60A;
-  height: 60px;
-  width: 60px;
-  margin: 12px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
+}
+button:hover{
+  background: black;
+  color: #FFC300;
+}
+#flex{
+  display:flex;
+  justify-content: space-around;
+  margin: 45px 0 45px 0;
+}
+.gg-close-r{
+  --ggs:2
 }
 
 @media screen and (orientation:landscape) {
@@ -60,21 +73,3 @@ button{
   }
 }
 
-/* Control icons*/
-#up {
-  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/up.png");
-}
-#left {
-  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/left.png");
-}
-#start {
-  background-color:#FFC300;
-  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/rotate.png");
-  border-radius: 25%;
-}
-#right {
-  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/right.png");
-}
-#down {
-  background-image: url("https://img.icons8.com/ios-glyphs/60/000000/down.png");
-}
