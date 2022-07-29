@@ -2,11 +2,8 @@
 
 ⚠️ Practice in Progress
 
-#### 🔴 HTML
-- [This page in HTML](Practice.HTML)
-
-#### 🔵 CSS
-- [This page in HTML with CSS](PracticeCSS.HTML)
+#### 🔴 HTML (+= 🔵 CSS)
+- [This page in HTML](index.HTML)
 
 #### 🔴🔵🟡 Projects
 - [Loading Screen](LoadingScreen.HTML)

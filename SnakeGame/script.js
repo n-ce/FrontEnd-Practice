@@ -70,25 +70,30 @@ let drawps = () => {
 }
 
 
-
-let speed = prompt('Enter Speed between 1(fastest) to 1000(slowest)\ndefault:300');
-if (speed == null) { speed = 300 }
-
-
-const interval = setInterval(() => {
-  drawps();
-}, speed);
-
-let play = false;
+let speed;
+let play;
+let interval;
 let pause = () => {
-  if (play == false) {
-    clearInterval(interval);
+  if (play == undefined) {
+    btn[2].classList.replace('gg-play-button-r', 'gg-play-pause-r');
+    speed = prompt('Enter Speed between 1(fastest) to 1000(slowest)\ndefault:300');
+    if (speed == null) { speed = 300 }
+    interval = setInterval(() => {
+      drawps();
+    }, speed);
     play = true;
   }
-  else {
-    const interval2 = setInterval(() => {
+  else if (play == true) {
+    btn[2].classList.replace('gg-play-pause-r', 'gg-play-button-r');
+    clearInterval(interval);
+    play = false;
+  }
+  else if (play == false) {
+    btn[2].classList.replace('gg-play-button-r', 'gg-play-pause-r');
+    interval = setInterval(() => {
       drawps();
-    }, 300);
+    }, speed);
+    play = true;
   }
 }
 
@@ -100,3 +105,13 @@ let move = (p1, p2, p3) => {
     a = p3;
   }
 }
+
+const btn = document.getElementsByTagName('button');
+
+btn[0].addEventListener('click', () => { move(l, -l, 0) });
+
+btn[1].addEventListener('click', () => { move(0, 0, -l) });
+
+btn[3].addEventListener('click', () => { move(0, 0, l) });
+
+btn[4].addEventListener('click', () => { move(-l, l, 0) });
