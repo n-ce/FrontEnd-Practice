@@ -2,7 +2,7 @@
 @import url('https://css.gg/arrow-left-r.css');
 @import url('https://css.gg/arrow-right-r.css');
 @import url('https://css.gg/arrow-down-r.css');
-@import url('https://css.gg/close-r.css');
+@import url('https://css.gg/play-pause-r.css');
 
 :root {
     --ggs: 2.5;
@@ -54,8 +54,8 @@ button:hover{
   justify-content: space-around;
   margin: 45px 0 45px 0;
 }
-.gg-close-r{
-  --ggs:2
+.gg-play-pause-r{
+  --ggs:2.5
 }
 
 @media screen and (orientation:landscape) {

@@ -43,8 +43,7 @@ function draw() {
   ctx.fillRect(z, w, s, s);
 }
 
-
-setInterval(() => {
+let drawps = () => {
   ctx.clearRect(0, 0, 300, 300);
   if (x == z && y == w) {
     z = rndNo(1, 29) * l;
@@ -53,20 +52,46 @@ setInterval(() => {
     k++;
   }
   if (x == -10 || x == 300 || y == -10 || y == 300) {
-    alert('game has ended');
-    location.reload();
+    clearInterval(interval);
+    if (confirm('The Game has ended.\nDo you want to restart?') == true) {
+      location.reload();
+    }
   }
   tail.push([x, y]);
-  ctx.fillStyle='green';
-  for(let i = 0;i<k;i++){
-  ctx.fillRect(tail[m-i][0], tail[m-i][1], s, s);
+  ctx.fillStyle = 'green';
+  for (let i = 0; i < k; i++) {
+    ctx.fillRect(tail[m - i][0], tail[m - i][1], s, s);
   }
   m++;
   draw();
   x += a;
   y += b;
 
-}, 300);
+}
+
+
+
+let speed = prompt('Enter Speed between 1(fastest) to 1000(slowest)\ndefault:300');
+if (speed == null) { speed = 300 }
+
+
+const interval = setInterval(() => {
+  drawps();
+}, speed);
+
+let play = false;
+let pause = () => {
+  if (play == false) {
+    clearInterval(interval);
+    play = true;
+  }
+  else {
+    const interval2 = setInterval(() => {
+      drawps();
+    }, 300);
+  }
+}
+
 
 // direction changer
 let move = (p1, p2, p3) => {
@@ -75,5 +100,3 @@ let move = (p1, p2, p3) => {
     a = p3;
   }
 }
-
-// wip snake tail -> dynamic movement & growth on eating
