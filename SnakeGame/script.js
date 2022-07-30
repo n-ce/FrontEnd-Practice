@@ -15,6 +15,7 @@ let y = rndNo(2, 28) * 10; // y co-ordinate
 let b = 0; // y movwr
 let k = 0; // length of tail
 let l = 10; // distance between tails
+// randomize direction
 rndNo(1, 2) == 1 ? a = l : b = l;
 
 let z = rndNo(1, 29) * l;
@@ -52,6 +53,7 @@ let drawps = () => {
     k++;
   }
   if (x == -10 || x == 300 || y == -10 || y == 300) {
+
     clearInterval(interval);
     if (confirm('The Game has ended.\nDo you want to restart?') == true) {
       location.reload();
@@ -111,6 +113,8 @@ const btn = document.getElementsByTagName('button');
 btn[0].addEventListener('click', () => { move(l, -l, 0) });
 
 btn[1].addEventListener('click', () => { move(0, 0, -l) });
+
+btn[2].addEventListener('click', () => { pause() });
 
 btn[3].addEventListener('click', () => { move(0, 0, l) });
 

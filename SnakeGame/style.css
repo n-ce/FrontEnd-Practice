@@ -55,9 +55,6 @@ button:hover{
   justify-content: space-around;
   margin: 45px 0 45px 0;
 }
-.gg-play-pause-r{
-  --ggs:2.5
-}
 
 @media screen and (orientation:landscape) {
   body {

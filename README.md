@@ -3,9 +3,10 @@
 ⚠️ Practice in Progress
 
 #### 🔴 HTML (+= 🔵 CSS)
-- [This page in HTML](index.HTML)
+- [This page in HTML](index.html)
 
 #### 🔴🔵🟡 Projects
-- [Loading Screen](LoadingScreen.HTML)
+- [Loading Screen](Front/LoadingScreen.HTML)
 - [Calculator](Calculator/)
-- [Snake Game(WIP)](SnakeGame/)
+- [Snake Game](SnakeGame/)
+- [Beat Maker](BeatMaker/)
